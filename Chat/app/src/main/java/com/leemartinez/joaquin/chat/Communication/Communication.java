@@ -14,6 +14,11 @@ import android.widget.Toast;
 import com.leemartinez.joaquin.chat.R;
 
 public class Communication extends AppCompatActivity {
+    // Constantes
+    private final String DEUX_POINT = " : ";
+
+    //Variables
+    private String _user;
     private EditText _edtMessage;
     private TextView _tvMessages;
     private Intent _intent;
@@ -37,9 +42,16 @@ public class Communication extends AppCompatActivity {
         // TODO
         // Send to other users
 
+        if (_edtMessage.getText().length() > 0) {
+            if (_user == null) _user = "bob";
 
-        _tvMessages.append("\n"  + _edtMessage.getText());
-        _edtMessage.setText("");
+            _tvMessages.append("\n" + _user + DEUX_POINT + _edtMessage.getText());
+            _edtMessage.setText("");
+            _edtMessage.setError(null);
+        }
+        else {
+            _edtMessage.setError("Veuillez inscrire un message");
+        }
     }
 
     private void strtService() {
