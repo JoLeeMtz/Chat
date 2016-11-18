@@ -45,6 +45,7 @@ public class Communication extends AppCompatActivity {
         if (_edtMessage.getText().length() > 0) {
             if (_user == null) _user = "bob";
 
+            _tvMessages.setText(_getUpdates.toString());
             _tvMessages.append("\n" + _user + DEUX_POINT + _edtMessage.getText());
             _edtMessage.setText("");
             _edtMessage.setError(null);
@@ -71,7 +72,7 @@ public class Communication extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String message = intent.getStringExtra("com.leemartinez.joaquin.MESSAGE");
 
-            _tvMessages.setText(message);
+            _tvMessages.setText("\n" + message);
         }
     }
 }
