@@ -3,4 +3,10 @@
     <string name="hint_write">Message ... </string>
     <string name="btn_send">Envoyer</string>
     <string name="btn_configuration">Next</string>
+    <string name="default_port">6000</string>
+    <string-array name="spinner_array">
+        <item>Comté</item>
+        <item>Mordor</item>
+        <item>Isengard</item>
+    </string-array>
 </resources>
